@@ -24,12 +24,12 @@
 
 						<p:outputLabel value="Nome" for="inputText-nome" />
 						<p:inputText id="inputText-nome" style="width:300px"
-							maxlength="70" value="#{produtoMB.nome}" required="true"
+							maxlength="70" value="#{produtoMB.produto.nome}" required="true"
 							requiredMessage="O nome é de preenchimento obrigatório" />
 
 						<p:outputLabel value="Valor" for="inputText-valor" />
 						<p:inputText id="inputText-valor" style="width:300px"
-							maxlength="70" value="#{produtoMB.valor}" required="true"
+							maxlength="70" value="#{produtoMB.produto.valor}" required="true"
 							requiredMessage="O valor é de preenchimento obrigatório" />
 
 						<p:spacer />
@@ -40,13 +40,6 @@
 
 
 					</h:panelGrid>
-
-					<p:messages showDetail="true" autoUpdate="true" closable="true"
-						severity="warn" />
-					<p:messages autoUpdate="true" closable="true" severity="error" />
-					<p:messages showDetail="true" autoUpdate="true" closable="true"
-						severity="info" />
-
 				</h:form>
 
 			</p:tab>
