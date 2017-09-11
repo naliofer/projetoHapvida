@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import br.com.rodrigo.model.Produto;
 import br.com.rodrigo.uteis.Uteis;
@@ -41,7 +42,7 @@ public class ProdutoListMB extends Bean implements Serializable {
 	}
 	
 	public String incluir() {
-		getFlash().clear();
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().clear();
 		Produto produto = new Produto();
 		produto.setAcao("incluir");
 		
@@ -50,7 +51,7 @@ public class ProdutoListMB extends Bean implements Serializable {
 	}
 	
 	public String editar(Produto prod) {
-		getFlash().clear();
+		FacesContext.getCurrentInstance().getExternalContext().getSessionMap().clear();
 		prod.setAcao("editar");
 		
 		putFlash("produto", prod);

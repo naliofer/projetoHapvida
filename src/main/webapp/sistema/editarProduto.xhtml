@@ -1,0 +1,59 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<ui:composition template="/template/template.xhtml">
+
+
+	<ui:define name="content">
+
+		<h:form id="form-cadastro" styleClass="form-projeto">
+
+			<h:panelGrid id="panelGrid-campos-form" columns="2" cellpadding="10">
+
+				<p:outputLabel value="Código" for="inputText-codigo" />
+				<p:inputText id="inputText-codigo" style="width:300px" maxlength="70"
+					value="#{produtoMB.view.produto.codigo}" required="true" disabled="#{produtoMB.produto.codigo ne null}"
+					requiredMessage="O código é de preenchimento obrigatório" />
+					
+				<p:outputLabel value="Nome" for="inputText-nome" />
+				<p:inputText id="inputText-nome" style="width:300px" maxlength="70"
+					value="#{produtoMB.view.produto.nome}" required="true"
+					requiredMessage="O nome é de preenchimento obrigatório" />
+
+				<p:outputLabel value="Valor" for="inputText-valor" />
+				<p:inputText id="inputText-valor" style="width:300px" maxlength="70"
+					value="#{produtoMB.view.produto.valor}" required="true"
+					requiredMessage="O valor é de preenchimento obrigatório" />
+
+				<p:spacer />
+
+				<p:commandButton value="Salvar" id="commandButton-salvar"
+					styleClass="botoes"
+					action="#{produtoMB.gravar()}"
+					update="panelGrid-campos-form" />
+
+
+			</h:panelGrid>
+
+		</h:form>
+
+
+
+
+
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

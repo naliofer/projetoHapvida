@@ -19,7 +19,7 @@
 			<p:messages autoUpdate="true" closable="true" severity="error" />
 			<p:messages showDetail="true" autoUpdate="true" closable="true" severity="info" />
 
-			<p:commandButton value="Adicionar Produto" styleClass="botoes" ajax="false" action="#{produtoListMB.incluir()}"/>
+			<p:commandButton style="left: 63% !important" value="Adicionar Produto" styleClass="botoes" ajax="false" action="#{produtoListMB.incluir()}"/>
 
 			<p:dataTable id="dataTable-registros"
 						 var="produto" 
@@ -43,8 +43,8 @@
         				       
         				       <p:commandButton icon="ui-icon-pencil" 
         				    				    title="Editar Registro"                        					 
-                        					    ajax="true"                        					 
-                        					    actionListener="#{produtoListMB.editar(produto)}"/>
+                        					    ajax="false"                        					 
+                        					    action="#{produtoListMB.editar(produto)}"/>
                         					 
         				 </p:column>
         				 

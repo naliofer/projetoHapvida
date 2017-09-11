@@ -8,7 +8,6 @@ import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 
 import br.com.rodrigo.model.Produto;
-import br.com.rodrigo.servico.ProdutoServico;
 import br.com.rodrigo.uteis.Uteis;
 import br.com.rodrigo.visao.ProdutoVisao;
 
@@ -52,7 +51,8 @@ public class ProdutoMB extends Bean implements Serializable {
 	private String gravarEdicao(Produto prod) {
 		for (Produto produtoObj : Uteis.produtos) {
 			if (produtoObj.getCodigo().equals(prod.getCodigo())) {
-
+				produtoObj.setNome(prod.getNome());
+				produtoObj.setValor(prod.getValor());
 			}
 		}
 		return "/sistema/consultarProduto.xhtml";
