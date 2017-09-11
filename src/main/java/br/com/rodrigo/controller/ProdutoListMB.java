@@ -41,10 +41,19 @@ public class ProdutoListMB extends Bean implements Serializable {
 	}
 	
 	public String incluir() {
+		getFlash().clear();
 		Produto produto = new Produto();
 		produto.setAcao("incluir");
 		
 		putFlash("produto", produto);
+		return "/sistema/cadastrarProduto.xhtml";
+	}
+	
+	public String editar(Produto prod) {
+		getFlash().clear();
+		prod.setAcao("editar");
+		
+		putFlash("produto", prod);
 		return "/sistema/cadastrarProduto.xhtml";
 	}
 }

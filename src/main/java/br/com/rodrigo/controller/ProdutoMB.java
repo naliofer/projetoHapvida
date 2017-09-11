@@ -13,24 +13,24 @@ import br.com.rodrigo.uteis.Uteis;
 import br.com.rodrigo.visao.ProdutoVisao;
 
 @ViewScoped
-@ManagedBean(name="produtoMB")
-public class ProdutoMB extends Bean implements Serializable{
-	
+@ManagedBean(name = "produtoMB")
+public class ProdutoMB extends Bean implements Serializable {
+
 	private static final long serialVersionUID = -2828691108692195837L;
 
 	private Produto produto;
-	
+
 	@Inject
 	private ProdutoVisao view;
-	
-	@Inject
-	private ProdutoServico servico;
-	
+
 	@PostConstruct
 	public void init() {
+		if (view == null) {
+			view = new ProdutoVisao();
+		}
 		view.setProduto((Produto) getFlash("produto"));
 	}
-	
+
 	public Produto getProduto() {
 		return produto;
 	}
@@ -38,10 +38,10 @@ public class ProdutoMB extends Bean implements Serializable{
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-	
+
 	public String gravar() {
 		Produto prod = view.getProduto();
-		
+
 		if (prod.getAcao() != "incluir") {
 			return gravarEdicao(prod);
 		} else {
@@ -52,7 +52,7 @@ public class ProdutoMB extends Bean implements Serializable{
 	private String gravarEdicao(Produto prod) {
 		for (Produto produtoObj : Uteis.produtos) {
 			if (produtoObj.getCodigo().equals(prod.getCodigo())) {
-				
+
 			}
 		}
 		return "/sistema/consultarProduto.xhtml";
@@ -61,5 +61,13 @@ public class ProdutoMB extends Bean implements Serializable{
 	private String gravarInclusao(Produto prod) {
 		Uteis.produtos.add(prod);
 		return "/sistema/consultarProduto.xhtml";
+	}
+
+	public ProdutoVisao getView() {
+		return view;
+	}
+
+	public void setView(ProdutoVisao view) {
+		this.view = view;
 	}
 }
