@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
@@ -7,7 +7,10 @@
 <body>
 
 	<h:head>
-		<h:outputStylesheet library="css" name="default.css"/>
+
+		<h:outputStylesheet library="css" name="default.css" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<ui:insert name="css"></ui:insert>
 	</h:head>
 
 
@@ -20,5 +23,12 @@
 		</ui:insert>
 	</div>
 
+	<div id="footer"></div>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<ui:insert name="javascript"></ui:insert>
+
 </body>
+
 </html>

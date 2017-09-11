@@ -1,24 +1,49 @@
 /*tamanho da fonte dos componentes do primefaces*/
-.ui-widget {  
-    font-size: 12px !important;  
-} 
- 
-html,
-body {
-   margin:0;
-   padding:0;
-   height:100%;   
+.ui-widget {
+	font-size: 12px !important;
 }
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
 #content {
- 
-   min-height:93%;
-   position:relative;
+	min-height: 93%;
+	position: relative;
 }
+
 #header {
-   padding:0px;
+	padding: 0px;
 }
+
 #body {
- 
-   padding:10px;
-   padding-bottom:60px;
+	padding: 10px;
+	padding-bottom: 60px;
+}
+
+#form-consulta {
+	margin: auto;
+	margin-left: 2%;
+}
+
+.dataTable-projeto, .form-projeto {
+	margin: 0 15%;
+	background: #c4c4c4 !important;
+}
+
+.menubar-projeto {
+	padding-left: 2% !important;
+	color: white;
+	font-weight: bold;
+}
+
+.botoes {
+	background: linear-gradient(to bottom, #fbb450, #f89406) !important;
+	display: block;
+	line-height: 23px;
+	color: white !important;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
 }
